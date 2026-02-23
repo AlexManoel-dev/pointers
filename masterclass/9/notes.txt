@@ -1,0 +1,19 @@
+- quando um programa roda, o so reserva um espaço na memória pra execução do programa: stack, heap, static/global e code(text)
+ 
+- stack tem tamanho fixo e as alocações acontecem em runtime, se passar do tamanho, stack overflow
+ 
+- na stack precisamos saber o tamanho de arrays em tempo de compilação
+ 
+- então nos casos, de alocar muita memória, manter a variável na memória o tempo que quiser, a heap trabalha pra isso
+ 
+- heap pode usar quanta memória quiser, desde que não acabe com a do sistema
+ 
+- stack e heap sao estruturas de dados, na stack da memória a estrutura stack é usada, na heap, a estrutura heap não é usada, tem apenas o nome igual
+ 
+- heap fica entre stack e global, stack desaloca ao fim das funções, global fica pra sempre até o final da main, heap é desalocado pelo programador quando quiser
+ 
+- o free() pode apagar ou nao apagar os dados que estão naquele endereço de memória, depende do compilador, mas a certeza é que ele vai liberar aquele espaço,
+pra ser alocado novamente, igual hd quando apaga arquivos, só apaga a referência, não os dados reais
+
+- anotação separada: arrays da heap vivem até o uso do free(), portanto da pra deixar la pra usar quando bem entender,
+ja que na stack o array morre ao término da função

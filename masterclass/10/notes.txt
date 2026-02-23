@@ -1,0 +1,4 @@
+- sempre que a called function usar um ponteiro pra algo da calling function, o valor vai estar ok, porque a calling function ainda vai estar na memória,
+ou seja, a called function sempre vai ficar no topo da stack, assim conseguindo pegar valores da calling function,
+portanto, é ok passar variáveis locais de baixo pra cima na stack, mas de cima pra baixo não,
+funciona ok se o valor estiver na memória heap ou global

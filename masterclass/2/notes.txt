@@ -1,0 +1,7 @@
+- tem que tomar cuidado com até onde são feitas as operações aritméticas com ponteiros pra não acabar lendo dados que não deveria, corromper memória, ou crashar o programa
+
+- em int, o bit mais significativo, que é o primeiro da esquerda pra direita dos 4 bytes, é quem define se o int é signed ou unsigned, o uresto representa o valor
+
+- os bits que representam o valor em binário, entao por exemplo, se int tem 4 bytes, o numero 1025 fica: (byte3)00000000 (byte2)00000000 (byte1)00000100 (byte0)00000001
+
+- e quando um ponteiro aponta pro endereço de um int, ele aponta pro byte 0, e se ele derreferencia, ele conta 4 bytes, contando com o byte 0

@@ -1,0 +1,12 @@
+- quando um array é passado pra uma função, implicitamente o compilador faz com que o array seja um ponteiro para o primeiro elemento do array,
+ou seja, por conta disso não da pra calcular o tamanho do array dentro da função, porque se for fazer o sizeof(array), el não vai fazer em int array[] e sim em int *array,
+e portanto o cálculo do tamanho vai ser errado, logo, é preciso passar o tamanho como argumento de função, ou seja, é feito uma chamada por referência, e em array,
+a chamada sempre é feita por referência
+
+- arrays sempre são passados pra funções como referência
+
+- arrays não podem armazenar tipos diferentes, porque tipos diferentes tem tamanhos diferentes, e pra ler tipos diferentes o compilador precisaria calcular,
+e então deixaria de ser O(1), não seria mais constante, e sabendo o tamanho de todos, que é igual, ele só pula a quantidade de bytes necessária para chegar no desejado
+
+- o único momento em que um array se aproxima de armazenar tipos diferentes, é quando é um array de ponteiros e armazena o endereço desses tipos diferentes,
+ja que os ponteiros dentro do array tem o mesmo tamanho

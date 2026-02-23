@@ -1,0 +1,38 @@
+- Memory Management Unit fica entre a memória real e o acesso do programa à memória, ou seja, o programa nunca acessa a RAM diretamente, ele vê endereços lógicos,
+que pela MMU são traduzidos em endereços físicos na RAM, e a memória é divida em páginas de 4KB cada, e cada pagina tem suas permissões RWXUS:
+R - pode ler
+W - pode escrever
+X - pode executar
+U - pode ser acessada pelo usuário
+S - apenas kernel
+
+- quando se tenta acessar memória proibida, o que acontece é que a MMU consulta as páginas da memória, vê se a página existe,
+ou se não tem permissão de escrita num exemplo em que tenta-se escrever numa memória proibida, então dispara um Page Fault e mata o processo com segmentation fault
+
+- o DEP, Data Execution Prevention, protege com que códigos sejam executados em áreas de memória destinadas a dados, como stack e heap,
+o DEP marca as páginas de memória como não executáveis, aí se algum processo tentar executar algo dentro dessa página, ele encerra o processo
+
+- printf() pausa a execução da main e executa ela mesma, depois volta o controle para a main
+
+- callstack é a pilha de ordem de execução das funções de um programa, a função do topo é sempre a executada, quando a do topo termina, aquela memória é desalocada,
+e a anterior passa a ficar no topo, portanto o foco volta para a função anterior
+
+- na stackframe de cada função também ficam os parâmetros de função, não somente variáveis declaradas dentro da função
+
+- variáveis que ficam na seção static/global também são desalocadas ao fim da execução da main
+
+- o tamanho da .text e stack é decidido no tempo de compilação
+
+- heap não tem um tamanho fixo, e pode crescer o tanto que o dev quiser, contanto que o sistema não esteja sem memória pra usar
+
+- em threads, as mesmas possuem cada uma sua stack e seu contexto na cpu, mas compartilham as outras seções(.text, .global), PID a memória heap também
+
+“Essa função precisa de uma cópia do valor ou precisa acessar/modificar o original na memória?”
+| Situação                        | Passa o quê              |
+| ------------------------------- | ------------------------ |
+| Quero que a função altere isso  | Ponteiro                 |
+| Quero que a função só leia      | Valor                    |
+| É array/string                  | Ponteiro automaticamente |
+| Struct grande                   | Ponteiro                 |
+| Precisa devolver vários valores | Ponteiro                 |
+| Número simples, cálculo         | Valor                    |

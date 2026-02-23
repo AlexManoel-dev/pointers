@@ -1,0 +1,11 @@
+- existe uma lookup table que armazena os tipos, começo e final de endereços de variáveis
+
+- variáveis criadas e não inicializadas imprimem lixo porque ja existia valor anteriormente naquele endereço
+
+- ponteiros são fortemente tipados também, por conta da derreferência, e tipos tem diferentes tamanhos
+
+- ponteiros (void *), não podem derreferenciar e nem fazer operações aritméticas
+
+- não da pra derreferenciar um ponteiro void, tem que fazer casting antes
+
+- o tipo de um ponteiro importa mais pra derreferencia e aritmética do que para o endereço em si

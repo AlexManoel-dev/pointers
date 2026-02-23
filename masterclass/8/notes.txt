@@ -1,0 +1,6 @@
+- array 1d -> a[i] == *(a + i), pega o endereço e adiciona o i e derreferencia,
+portanto em array 2d -> b[i][j] == *(b[i] + j) == ((b + i) + j),
+portanto, a aritmética pode acontecer,
+ja que não é a operação a++ nem b++, e sim soma de ponteiros com valores,
+então se *ptr = a, apenas com o array existe essas duas formas a[i] OU *(a + i)
+já com ponteiro(*ptr) ptr[i] É *(ptr + i)

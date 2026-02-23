@@ -1,0 +1,8 @@
+- o perigo dos ponteiros é que se você tem o endereço de algum valor, você consegue visualizá-lo,
+mas você deveria ver e escrever apenas quando o endereço ta alocado pra você,
+no caso de ter o endereço mas não estar alocado, não da pra saber o que tá sendo lido e escrito,
+mas depende do compilador e da máquina, tem casos que da pra escrever, tem casos que o programa crasha,
+portanto deve-se usar apenas memórias alocadas, se não vai dar comportamente indefinido
+
+- garbage collector nada mais é do que um mecanismo que faz automaticamente o free e desaloca variáveis da heap,
+para que o dev não se preocupe com isso, isso evita memory leak

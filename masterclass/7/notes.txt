@@ -1,0 +1,16 @@
+- char c1[6] = "Hello"; e char *c2 = c1;, os dois eu posso fazer uma operação de c1[i](representa: *(c1 + 1)) e c2[i](representa: *(c2 + 1))
+
+- o c1 não pode receber o c2, porque é basicamente um array recebendo um ponteiro, o que não faz sentido, e também não tem aritmética em atribuição no c1,
+por exemplo: c1 = c1 + 1;, nao é possível
+
+- usar c2++ é possível, c1++ não
+
+- se um array tem um tamanho definido, e o resto não é usado, o restante é preenchido com '\0'
+
+- char c1[] = "Hello"; é armazenado no espaço pra um array na stack,
+char *c1 = "Hello"; e/ou passar uma string literal pra uma função tipo printf("Hello World");, armazena a string como uma const, no tempo de compilação,
+vai ser armazenada na seção .text, e não pode ser modificada
+
+- const char *c é usado como parâmetro de função quando não é preciso modificar valores, apenas ler
+
+- const char *c = "string"; é mais correto de usar porque ja fala pro compilador que é imutável

@@ -1,0 +1,13 @@
+% formats
+d - int (decimal)
+c - char
+s - string (char *)
+p - pointer
+zu - size returned from sizeof
+hd - short
+ld - long
+lld - long long
+u - unsigned int
+lu - unsigned long
+llu - unsigned long long
+hhx ou x - byte

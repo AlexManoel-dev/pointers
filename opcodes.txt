@@ -1,0 +1,8 @@
+0x90 - nop
+0xCC - int3, breakpoint
+0xC3 - ret
+
+Em uma string, os seguintes bytes representam quebra de linha
+0x0A - LF(\n), linux
+0xOD 0X0A - CRLF(\r\n), windows
+0x0D - CR(\r), mac

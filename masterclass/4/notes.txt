@@ -1,0 +1,10 @@
+- o código inteiro é armazenado na stack, e pra função main é criado uma stackframe, e cada função tem uma stackframe, valores passados sem ponteiro são copiados,
+portanto, a main roda, passa o controle pro increment(), atualiza a variável da stackframe da função increment() e então volta o controle pra função main
+
+- uma variável local só vive até a função terminar sua execução
+
+- a calling function chama a called function, na main, na hora da chamada, a called function recebe o actual argument e na função increment ele é o formal argument,
+então quando a função é chamada ele mapeia a(main) -> a(função), quando é feito essa cópia, o tipo da função é chamada por valor(call by value)
+
+- na chamada por referência, a função main passa o controle pra increment(), que ela tem um ponteiro que aponta para a variável local de main,
+e então altera o valor naquele endereço, então depois que o increment() para sua execução, quando volta pra main, o valor foi alterado
