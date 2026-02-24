@@ -31,8 +31,9 @@ int main() {
 
 void play(int bet) {
   // char c[3] = {'J', 'Q', 'K'};
-  // o vazamento aqui aconteece porque, quando a função play() é chamada ela aloca uma variável *c, porém como ela não desaloca, essa variável fica armazenada mesmo quando a função play termina
-  // ou seja, se rodar o play() várias vezes, vai encher de variável na heap e vai aumentar o tamanho da memória que tá consumindo, e isso só porque o free() não foi usado
+  // o vazamento aqui aconteece porque, quando a função play() é chamada ela aloca uma variável *c e um bloco de memória na heap, porém como ela não desaloca o bloco de memória,
+  // a variável *c desaloca pela stack, perde a referência, mas por falta do free() o bloco de memória da heap fica armazenado mesmo quando a função play termina
+  // ou seja, se rodar o play() várias vezes, vai encher de bloco de memória na heap e vai aumentar o tamanho da memória que tá consumindo, e isso só porque o free() não foi usado
   // na stack dava certo, porque assim que a função play() acabava, a vida da variável c[] acabava também, desalocando automaticamente
   // char *c = (char *)malloc(10000 * sizeof(char)); // isso daqui faria MUITO vazamento de memória, mas com free, fica de boa
   char *c = (char *)malloc(3 * sizeof(char));
